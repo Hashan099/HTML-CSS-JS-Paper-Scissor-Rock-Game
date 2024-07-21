@@ -6,9 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const endgamebutton = document.getElementById("endGameButton");
   let score = { player: 0, computer: 0 };
 
+  //clear buttin click event lisner
+  endgamebutton.addEventListener("click",  () => cleardom());
+
   //entry point
   startgame();
-  clearresults();
 
   //function to get the player choice from the user
   function startgame() {
@@ -77,13 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // clear game results
-  function clearresults() {
-    endgamebutton.addEventListener("click", () => {
-      cleardom();
-    });
-  }
 
+//funtion for clearing the results
   function cleardom() {
     displayresult.innerHTML = ``;
     displayscore.innerHTML = ` <p> Player : 0 | 0 : Computer </P>`;
