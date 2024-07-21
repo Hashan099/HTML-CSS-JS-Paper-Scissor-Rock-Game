@@ -1,0 +1,113 @@
+body {
+  min-height: 100dvh;
+  min-width: 100vw;
+  padding: 0;
+  margin: 0;
+  background-image: url("../assets/bg.png");
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  place-content: center;
+}
+
+.wrapper {
+  background-color: rgba(141, 182, 218, 0.611);
+  backdrop-filter: blur(10px);
+  color: black;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+h1{
+  color: whitesmoke;
+  font-weight: bolder;
+  letter-spacing: 15px;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+button {
+  height: 100px;
+  width: 100px;
+  font-size: 48px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+#paper {
+  background-color: blue;
+}
+
+#paper:hover,
+#paper:focus {
+  background-color: rgba(0, 0, 255, 0.564);
+  filter: brightness(120%);
+}
+
+#Scissors {
+  background-color: rgb(49, 210, 49);
+}
+
+#Scissors:hover,
+#Scissors:focus {
+  background-color:rgba(49, 210, 49, 0.588);
+  filter: brightness(120%);
+}
+
+#Rock {
+  background-color: rebeccapurple;
+}
+
+#Rock:hover,
+#Rock:focus {
+  background-color: rgba(102, 51, 153, 0.656);
+  filter: brightness(120%);
+}
+
+#endGameButton {
+  font-size: 1rem;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+  padding: 1rem;
+  background-color: red;
+  color: white;
+}
+
+#endGameButton:hover {
+  filter: brightness(150%);
+}
+
+.resultContainer {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.result-paragraph {
+  color: rgb(21, 21, 72);
+}
+
+/* media queires for mobile*/
+@media screen and (max-width:768px) {
+  
+  body{
+    display: block;
+  }
+
+  h1{
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    white-space: nowrap;
+    margin-bottom: 3rem;
+  }
+}
