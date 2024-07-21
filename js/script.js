@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //entry point
   startgame();
+  clearresults();
 
   //function to get the player choice from the user
   function startgame() {
@@ -38,7 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (player === computer) {
       result = "Tie";
     } else if (
-      (player === "🤚" && computer === "✊") || (player === "✌" && computer === "🤚") || (player === "✊" && computer === "✌")
+      (player === "🤚" && computer === "✊") ||
+      (player === "✌" && computer === "🤚") ||
+      (player === "✊" && computer === "✌")
     ) {
       result = "win";
     } else {
@@ -66,16 +69,10 @@ document.addEventListener("DOMContentLoaded", () => {
         alert(
           `your score is ${score.player} so You Win the Game Congratulations...`
         );
-        displayresult.innerHTML = `<p class ='result-paragraph'> player 0 <br> Computer 0 </p>`;
-        displayscore.innerHTML = ` <p> Player : 0 | 0 : Computer </P>`;
-        score["player"] = 0;
-        score["computer"] = 0;
+        cleardom();
       } else if (score.player < score.computer) {
         alert(`Computer score is ${score.computer} so Computer Win the Game`);
-        displayresult.innerHTML = `<p class ='result-paragraph'> player 0 <br> Computer 0 </p>`;
-        displayscore.innerHTML = ` <p> Player : 0 | 0 : Computer </P>`;
-        score["player"] = 0;
-        score["computer"] = 0;
+        cleardom();
       }
     }
   }
@@ -83,11 +80,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // clear game results
   function clearresults() {
     endgamebutton.addEventListener("click", () => {
-      displayresult.innerHTML = ``;
-      displayscore.innerHTML = ` <p> Player : 0 | 0 : Computer </P>`;
-      score["player"] = 0;
-      score["computer"] = 0;
+      cleardom();
     });
   }
-  clearresults();
+
+  function cleardom() {
+    displayresult.innerHTML = ``;
+    displayscore.innerHTML = ` <p> Player : 0 | 0 : Computer </P>`;
+    score["player"] = 0;
+    score["computer"] = 0;
+  }
 });
